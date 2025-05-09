@@ -58,6 +58,7 @@ class Filters extends BaseConfig
                     'Produk', 'Produk/*',
                     'Kategori', 'Kategori/*',
                     'Satuan', 'Satuan/*',
+                    'Warna', 'Warna/*',
                     'User', 'User/*',
                     'BarangMasuk', 'BarangMasuk/*',
                     'BarangKeluar', 'BarangKeluar/*',
