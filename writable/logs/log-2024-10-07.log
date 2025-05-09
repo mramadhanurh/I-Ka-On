@@ -1,0 +1,494 @@
+INFO - 2024-10-07 00:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:03:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:18:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:18:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:18:49 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:18:49 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:21:20 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:21:20 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:21:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:21:24 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:21:24 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:27:53 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:27:53 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:28:27 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:28:28 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:29:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:29:42 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:29:42 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:29:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:29:45 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:29:45 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:30:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:30:01 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:30:01 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:30:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:30:04 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:30:04 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:30:11 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:30:11 --> Unknown column 'tbl_rinci_transaksi.total_harga' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`total_harga`) AS `total_harga`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:31:05 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.grand_total' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:31:05 --> Unknown column 'tbl_rinci_transaksi.grand_total' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`grand_total`) AS `grand_total`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:31:06 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.grand_total' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:31:06 --> Unknown column 'tbl_rinci_transaksi.grand_total' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`grand_total`) AS `grand_total`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:31:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-07 00:31:15 --> mysqli_sql_exception: Unknown column 'tbl_rinci_transaksi.grand_total' in 'field list' in C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\laragon\www\inven-order-barang\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT MONTH(tb...', 0)
+#1 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MONTH(tb...')
+#2 C:\laragon\www\inven-order-barang\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MONTH(tb...')
+#3 C:\laragon\www\inven-order-barang\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tb...', Array, false)
+#4 C:\laragon\www\inven-order-barang\app\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\inven-order-barang\app\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+#6 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+#7 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+#8 C:\laragon\www\inven-order-barang\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\inven-order-barang\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-10-07 00:31:15 --> Unknown column 'tbl_rinci_transaksi.grand_total' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT MONTH(tbl_transaksi.tgl_transaksi) as bulan, SUM(`tbl_rinci_transaksi`.`grand_total`) AS `grand_total`, SUM(`tbl_rinci_transaksi`.`qty`) AS `qty`
+FROM `tbl_rinci_transaksi`
+JOIN `tbl_transaksi` ON `tbl_transaksi`.`no_order` = `tbl_rinci_transaksi`.`no_order`
+WHERE YEAR(tbl_transaksi.tgl_transaksi) = :YEAR(tbl_transaksi.tgl_transaksi):
+GROUP BY MONTH(tbl_transaksi.tgl_transaksi)', [...], false)
+ 2 APPPATH\Models\ModelLaporan.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Laporan.php(167): App\Models\ModelLaporan->DataTahunan('2024')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:31:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-07 00:31:42 --> Undefined index: total_harga
+in APPPATH\Views\laporan\v_tabel_laporan_tahunan.php on line 33.
+ 1 APPPATH\Views\laporan\v_tabel_laporan_tahunan.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: total_harga', 'APPPATH\\Views\\laporan\\v_tabel_laporan_tahunan.php', 33, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\laporan\\v_tabel_laporan_tahunan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('laporan/v_tabel_laporan_tahunan', [], true)
+ 5 APPPATH\Controllers\Laporan.php(173): view('laporan/v_tabel_laporan_tahunan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-07 00:31:46 --> Undefined index: total_harga
+in APPPATH\Views\laporan\v_tabel_laporan_tahunan.php on line 33.
+ 1 APPPATH\Views\laporan\v_tabel_laporan_tahunan.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: total_harga', 'APPPATH\\Views\\laporan\\v_tabel_laporan_tahunan.php', 33, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\laporan\\v_tabel_laporan_tahunan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('laporan/v_tabel_laporan_tahunan', [], true)
+ 5 APPPATH\Controllers\Laporan.php(173): view('laporan/v_tabel_laporan_tahunan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-07 00:32:30 --> Undefined index: total_harga
+in APPPATH\Views\laporan\v_tabel_laporan_tahunan.php on line 33.
+ 1 APPPATH\Views\laporan\v_tabel_laporan_tahunan.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: total_harga', 'APPPATH\\Views\\laporan\\v_tabel_laporan_tahunan.php', 33, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\laporan\\v_tabel_laporan_tahunan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('laporan/v_tabel_laporan_tahunan', [], true)
+ 5 APPPATH\Controllers\Laporan.php(173): view('laporan/v_tabel_laporan_tahunan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-07 00:32:34 --> Undefined index: total_harga
+in APPPATH\Views\laporan\v_tabel_laporan_tahunan.php on line 33.
+ 1 APPPATH\Views\laporan\v_tabel_laporan_tahunan.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: total_harga', 'APPPATH\\Views\\laporan\\v_tabel_laporan_tahunan.php', 33, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\laporan\\v_tabel_laporan_tahunan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('laporan/v_tabel_laporan_tahunan', [], true)
+ 5 APPPATH\Controllers\Laporan.php(173): view('laporan/v_tabel_laporan_tahunan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->ViewLaporanTahunan()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:32:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:41:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-07 00:42:46 --> Invalid file: "laporan/v_print_lap_tahunan.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('laporan/v_print_lap_tahunan.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('laporan/v_print_lap_tahunan', [], true)
+ 3 APPPATH\Views\laporan\v_template_print_laporan.php(43): view('laporan/v_print_lap_tahunan')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\laporan\\v_template_print_laporan.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('laporan/v_template_print_laporan', [], true)
+ 7 APPPATH\Controllers\Laporan.php(188): view('laporan/v_template_print_laporan', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Laporan->PrintLaporanTahunan('2024')
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-07 00:44:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:44:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:44:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:45:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:51:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:51:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:52:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 00:59:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:01:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:02:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:02:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:02:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:23:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:26:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-07 01:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

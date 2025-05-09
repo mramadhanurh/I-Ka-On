@@ -1,0 +1,440 @@
+CRITICAL - 2024-10-17 00:02:18 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 882.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(832): CodeIgniter\Model->builder()
+ 3 APPPATH\Models\ModelStore.php(22): CodeIgniter\Model->__call('join', [...])
+ 4 APPPATH\Controllers\Store.php(36): App\Models\ModelStore->getPaginatedData(6)
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:03:13 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::paginate()
+in APPPATH\Models\ModelStore.php on line 26.
+ 1 APPPATH\Controllers\Store.php(36): App\Models\ModelStore->getPaginatedData(6)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:03:15 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::paginate()
+in APPPATH\Models\ModelStore.php on line 26.
+ 1 APPPATH\Controllers\Store.php(36): App\Models\ModelStore->getPaginatedData(6)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:06:18 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::paginate()
+in APPPATH\Models\ModelStore.php on line 26.
+ 1 APPPATH\Controllers\Store.php(36): App\Models\ModelStore->getPaginatedData(6)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:09:17 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Store.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:09:18 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Store.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:09:20 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Store.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-17 00:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:15:20 --> Cart Class Initialized
+CRITICAL - 2024-10-17 00:15:20 --> Undefined variable: pager
+in APPPATH\Views\v_store.php on line 99.
+ 1 APPPATH\Views\v_store.php(99): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: pager', 'APPPATH\\Views\\v_store.php', 99, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_store.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('v_store', [], true)
+ 5 APPPATH\Views\layout\v_content.php(4): view('v_store')
+ 6 APPPATH\Views\layout\v_wrapper_frontend.php(7): require_once('APPPATH\\Views\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\v_wrapper_frontend.php')
+ 8 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('layout/v_wrapper_frontend', [], true)
+10 APPPATH\Controllers\Store.php(47): view('layout/v_wrapper_frontend', [...])
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:23:48 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Store.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:25:33 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Store.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:25:34 --> Call to a member function paginate() on array
+in APPPATH\Controllers\Store.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:29:32 --> Trying to get property 'pager' of non-object
+in APPPATH\Controllers\Store.php on line 42.
+ 1 APPPATH\Controllers\Store.php(42): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'pager\' of non-object', 'APPPATH\\Controllers\\Store.php', 42, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:29:42 --> Trying to get property 'pager' of non-object
+in APPPATH\Controllers\Store.php on line 42.
+ 1 APPPATH\Controllers\Store.php(42): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'pager\' of non-object', 'APPPATH\\Controllers\\Store.php', 42, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:32:35 --> Trying to get property 'pager' of non-object
+in APPPATH\Controllers\Store.php on line 42.
+ 1 APPPATH\Controllers\Store.php(42): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'pager\' of non-object', 'APPPATH\\Controllers\\Store.php', 42, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:32:38 --> Trying to get property 'pager' of non-object
+in APPPATH\Controllers\Store.php on line 42.
+ 1 APPPATH\Controllers\Store.php(42): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'pager\' of non-object', 'APPPATH\\Controllers\\Store.php', 42, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-10-17 00:32:40 --> Trying to get property 'pager' of non-object
+in APPPATH\Controllers\Store.php on line 42.
+ 1 APPPATH\Controllers\Store.php(42): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get property \'pager\' of non-object', 'APPPATH\\Controllers\\Store.php', 42, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-17 00:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:32:55 --> Cart Class Initialized
+CRITICAL - 2024-10-17 00:32:55 --> Undefined index: nama_kategori
+in APPPATH\Views\v_store.php on line 65.
+ 1 APPPATH\Views\v_store.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: nama_kategori', 'APPPATH\\Views\\v_store.php', 65, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_store.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('v_store', [], true)
+ 5 APPPATH\Views\layout\v_content.php(4): view('v_store')
+ 6 APPPATH\Views\layout\v_wrapper_frontend.php(7): require_once('APPPATH\\Views\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\v_wrapper_frontend.php')
+ 8 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 9 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('layout/v_wrapper_frontend', [], true)
+10 APPPATH\Controllers\Store.php(48): view('layout/v_wrapper_frontend', [...])
+11 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+12 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+13 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-17 00:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:33:59 --> Cart Class Initialized
+INFO - 2024-10-17 00:34:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:34:22 --> Cart Class Initialized
+INFO - 2024-10-17 00:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:34:39 --> Cart Class Initialized
+INFO - 2024-10-17 00:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:34:56 --> Cart Class Initialized
+INFO - 2024-10-17 00:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:34:56 --> Cart Class Initialized
+INFO - 2024-10-17 00:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:35:14 --> Cart Class Initialized
+INFO - 2024-10-17 00:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:35:26 --> Cart Class Initialized
+INFO - 2024-10-17 00:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:35:26 --> Cart Class Initialized
+INFO - 2024-10-17 00:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:35:38 --> Cart Class Initialized
+INFO - 2024-10-17 00:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:35:40 --> Cart Class Initialized
+INFO - 2024-10-17 00:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:35:41 --> Cart Class Initialized
+INFO - 2024-10-17 00:35:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:35:43 --> Cart Class Initialized
+INFO - 2024-10-17 00:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:35:54 --> Cart Class Initialized
+INFO - 2024-10-17 00:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:37:39 --> Cart Class Initialized
+CRITICAL - 2024-10-17 00:37:39 --> Call to a member function links() on null
+in APPPATH\Views\v_store.php on line 99.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('v_store', [], true)
+ 4 APPPATH\Views\layout\v_content.php(4): view('v_store')
+ 5 APPPATH\Views\layout\v_wrapper_frontend.php(7): require_once('APPPATH\\Views\\layout\\v_content.php')
+ 6 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\v_wrapper_frontend.php')
+ 7 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('layout/v_wrapper_frontend', [], true)
+ 9 APPPATH\Controllers\Store.php(48): view('layout/v_wrapper_frontend', [...])
+10 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+11 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+12 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-17 00:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:51:20 --> Cart Class Initialized
+INFO - 2024-10-17 00:51:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:51:26 --> Cart Class Initialized
+INFO - 2024-10-17 00:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:51:37 --> Cart Class Initialized
+INFO - 2024-10-17 00:52:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:52:05 --> Cart Class Initialized
+INFO - 2024-10-17 00:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:52:13 --> Cart Class Initialized
+INFO - 2024-10-17 00:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:52:20 --> Cart Class Initialized
+INFO - 2024-10-17 00:52:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:52:27 --> Cart Class Initialized
+INFO - 2024-10-17 00:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:52:28 --> Cart Class Initialized
+INFO - 2024-10-17 00:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:52:54 --> Cart Class Initialized
+INFO - 2024-10-17 00:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:52:55 --> Cart Class Initialized
+INFO - 2024-10-17 00:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:53:17 --> Cart Class Initialized
+INFO - 2024-10-17 00:53:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:53:18 --> Cart Class Initialized
+INFO - 2024-10-17 00:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:53:27 --> Cart Class Initialized
+INFO - 2024-10-17 00:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:53:29 --> Cart Class Initialized
+INFO - 2024-10-17 00:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:53:29 --> Cart Class Initialized
+INFO - 2024-10-17 00:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:53:31 --> Cart Class Initialized
+INFO - 2024-10-17 00:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:53:49 --> Cart Class Initialized
+CRITICAL - 2024-10-17 00:54:35 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::paginate()
+in APPPATH\Controllers\Store.php on line 36.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-17 00:56:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:56:25 --> Cart Class Initialized
+INFO - 2024-10-17 00:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:56:59 --> Cart Class Initialized
+INFO - 2024-10-17 00:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 00:59:59 --> Cart Class Initialized
+CRITICAL - 2024-10-17 00:59:59 --> "pagination" is not a valid Pager template.
+in SYSTEMPATH\Pager\Pager.php on line 120.
+ 1 SYSTEMPATH\Pager\Pager.php(120): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('pagination')
+ 2 SYSTEMPATH\Pager\Pager.php(83): CodeIgniter\Pager\Pager->displayLinks('product_pages', 'pagination')
+ 3 APPPATH\Views\v_store.php(102): CodeIgniter\Pager\Pager->links('product_pages', 'pagination')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_store.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('v_store', [], true)
+ 7 APPPATH\Views\layout\v_content.php(4): view('v_store')
+ 8 APPPATH\Views\layout\v_wrapper_frontend.php(7): require_once('APPPATH\\Views\\layout\\v_content.php')
+ 9 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\v_wrapper_frontend.php')
+10 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('layout/v_wrapper_frontend', [], true)
+12 APPPATH\Controllers\Store.php(50): view('layout/v_wrapper_frontend', [...])
+13 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+14 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+15 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-17 01:02:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:02:23 --> Cart Class Initialized
+INFO - 2024-10-17 01:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:06:21 --> Cart Class Initialized
+INFO - 2024-10-17 01:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:07:32 --> Cart Class Initialized
+INFO - 2024-10-17 01:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:08:25 --> Cart Class Initialized
+INFO - 2024-10-17 01:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:09:43 --> Cart Class Initialized
+INFO - 2024-10-17 01:14:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:14:11 --> Cart Class Initialized
+CRITICAL - 2024-10-17 01:14:11 --> "pagination_custom" is not a valid Pager template.
+in SYSTEMPATH\Pager\Pager.php on line 120.
+ 1 SYSTEMPATH\Pager\Pager.php(120): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('pagination_custom')
+ 2 SYSTEMPATH\Pager\Pager.php(83): CodeIgniter\Pager\Pager->displayLinks('product_pages', 'pagination_custom')
+ 3 APPPATH\Views\v_store.php(100): CodeIgniter\Pager\Pager->links('product_pages', 'pagination_custom')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_store.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('v_store', [], true)
+ 7 APPPATH\Views\layout\v_content.php(4): view('v_store')
+ 8 APPPATH\Views\layout\v_wrapper_frontend.php(7): require_once('APPPATH\\Views\\layout\\v_content.php')
+ 9 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\v_wrapper_frontend.php')
+10 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('layout/v_wrapper_frontend', [], true)
+12 APPPATH\Controllers\Store.php(50): view('layout/v_wrapper_frontend', [...])
+13 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+14 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+15 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-17 01:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:16:24 --> Cart Class Initialized
+CRITICAL - 2024-10-17 01:16:24 --> "pagination_custom" is not a valid Pager template.
+in SYSTEMPATH\Pager\Pager.php on line 120.
+ 1 SYSTEMPATH\Pager\Pager.php(120): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('pagination_custom')
+ 2 SYSTEMPATH\Pager\Pager.php(83): CodeIgniter\Pager\Pager->displayLinks('product_pages', 'pagination_custom')
+ 3 APPPATH\Views\v_store.php(100): CodeIgniter\Pager\Pager->links('product_pages', 'pagination_custom')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\v_store.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('v_store', [], true)
+ 7 APPPATH\Views\layout\v_content.php(4): view('v_store')
+ 8 APPPATH\Views\layout\v_wrapper_frontend.php(7): require_once('APPPATH\\Views\\layout\\v_content.php')
+ 9 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\layout\\v_wrapper_frontend.php')
+10 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+11 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('layout/v_wrapper_frontend', [], true)
+12 APPPATH\Controllers\Store.php(50): view('layout/v_wrapper_frontend', [...])
+13 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Store->index()
+14 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Store))
+15 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+16 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2024-10-17 01:19:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:19:08 --> Cart Class Initialized
+INFO - 2024-10-17 01:22:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:22:27 --> Cart Class Initialized
+INFO - 2024-10-17 01:23:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:23:15 --> Cart Class Initialized
+INFO - 2024-10-17 01:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:23:36 --> Cart Class Initialized
+INFO - 2024-10-17 01:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:26:25 --> Cart Class Initialized
+INFO - 2024-10-17 01:28:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:28:43 --> Cart Class Initialized
+INFO - 2024-10-17 01:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:31:36 --> Cart Class Initialized
+INFO - 2024-10-17 01:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:32:02 --> Cart Class Initialized
+INFO - 2024-10-17 01:32:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:32:18 --> Cart Class Initialized
+INFO - 2024-10-17 01:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:32:34 --> Cart Class Initialized
+INFO - 2024-10-17 01:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:33:18 --> Cart Class Initialized
+INFO - 2024-10-17 01:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:33:55 --> Cart Class Initialized
+INFO - 2024-10-17 01:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:34:18 --> Cart Class Initialized
+INFO - 2024-10-17 01:34:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:34:29 --> Cart Class Initialized
+INFO - 2024-10-17 01:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 01:34:32 --> Cart Class Initialized
+INFO - 2024-10-17 07:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 07:42:39 --> Cart Class Initialized
+INFO - 2024-10-17 08:11:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 08:11:10 --> Cart Class Initialized
+INFO - 2024-10-17 22:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:24:01 --> Cart Class Initialized
+INFO - 2024-10-17 22:24:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:24:29 --> Cart Class Initialized
+INFO - 2024-10-17 22:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:24:35 --> Cart Class Initialized
+INFO - 2024-10-17 22:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:26:31 --> Cart Class Initialized
+INFO - 2024-10-17 22:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:28:59 --> Cart Class Initialized
+INFO - 2024-10-17 22:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:29:16 --> Cart Class Initialized
+INFO - 2024-10-17 22:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:29:16 --> Cart Class Initialized
+INFO - 2024-10-17 22:29:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:29:25 --> Cart Class Initialized
+INFO - 2024-10-17 22:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:29:26 --> Cart Class Initialized
+INFO - 2024-10-17 22:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:29:38 --> Cart Class Initialized
+INFO - 2024-10-17 22:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:29:41 --> Cart Class Initialized
+INFO - 2024-10-17 22:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:32:29 --> Cart Class Initialized
+INFO - 2024-10-17 22:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:32:35 --> Cart Class Initialized
+INFO - 2024-10-17 22:32:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:32:35 --> Cart Class Initialized
+INFO - 2024-10-17 22:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:32:38 --> Cart Class Initialized
+INFO - 2024-10-17 22:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:32:44 --> Cart Class Initialized
+INFO - 2024-10-17 22:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:32:54 --> Cart Class Initialized
+INFO - 2024-10-17 22:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:32:54 --> Cart Class Initialized
+INFO - 2024-10-17 22:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:33:03 --> Cart Class Initialized
+INFO - 2024-10-17 22:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:33:03 --> Cart Class Initialized
+INFO - 2024-10-17 22:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:33:14 --> Cart Class Initialized
+INFO - 2024-10-17 22:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:33:16 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:26 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:29 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:29 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:31 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:40 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:41 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:49 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:50 --> Cart Class Initialized
+INFO - 2024-10-17 22:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:34:59 --> Cart Class Initialized
+INFO - 2024-10-17 22:35:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:35:01 --> Cart Class Initialized
+INFO - 2024-10-17 22:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:35:04 --> Cart Class Initialized
+INFO - 2024-10-17 22:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:35:05 --> Cart Class Initialized
+INFO - 2024-10-17 22:37:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:37:54 --> Cart Class Initialized
+INFO - 2024-10-17 22:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:38:06 --> Cart Class Initialized
+INFO - 2024-10-17 22:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:38:07 --> Cart Class Initialized
+INFO - 2024-10-17 22:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:38:10 --> Cart Class Initialized
+INFO - 2024-10-17 22:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:38:15 --> Cart Class Initialized
+INFO - 2024-10-17 22:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:40:17 --> Cart Class Initialized
+INFO - 2024-10-17 22:40:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:40:19 --> Cart Class Initialized
+INFO - 2024-10-17 22:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:45:47 --> Cart Class Initialized
+INFO - 2024-10-17 22:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:45:49 --> Cart Class Initialized
+INFO - 2024-10-17 22:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:45:49 --> Cart Class Initialized
+INFO - 2024-10-17 22:45:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:45:51 --> Cart Class Initialized
+INFO - 2024-10-17 22:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:45:57 --> Cart Class Initialized
+INFO - 2024-10-17 22:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:48:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:48:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:52:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:53:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 22:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 23:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 23:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-17 23:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
