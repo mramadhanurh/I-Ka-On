@@ -71,6 +71,7 @@ class Store extends BaseController
             'isi' => 'v_detail_barang',
             'gambar' => $this->ModelStore->gambar_barang($id_produk),
             'produk' => $this->ModelStore->Detail_Produk($id_produk),
+            'warna'     => $this->ModelStore->warna_produk($id_produk),
             'kategori' => $this->ModelStore->AllData_Kategori(),
             'cart' => \Config\Services::cart(),
         ];

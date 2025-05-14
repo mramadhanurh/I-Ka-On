@@ -26,6 +26,7 @@
                 echo form_hidden('price', $produk->harga_jual);
                 echo form_hidden('name', $produk->nama_produk);
                 echo form_hidden('gambar_produk', $produk->gambar_produk);
+                echo form_hidden('nama_satuan', $produk->nama_satuan);
                 echo form_hidden('redirect_page', str_replace('index.php/', '', current_url()));
                 ?>
                 <div class="bg-gray py-2 px-3 mt-4">
@@ -33,8 +34,24 @@
                         Rp <?= number_format($produk->harga_jual, 0) ?>
                     </h2>
                 </div>
-                <div class="mt-4">
+                <div class="mt-1">
                     <div class="row">
+                        <div class="col-sm-12">
+                            <?php if ($warna) { ?>
+                                <div class="mt-3">
+                                    <label>Pilih Warna :</label>
+                                    <div class="btn-group btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
+                                        <?php foreach ($warna as $key => $value) { ?>
+                                            <label class="btn btn-outline-info btn-sm m-1">
+                                                <input type="radio" name="warna" value="<?= $value['id_warna'] ?>" autocomplete="off"> <?= $value['nama_warna'] ?>
+                                            </label>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
                         <div class="col-sm-2">
                             <input type="number" name="qty" class="form-control" value="1" min="1">
                         </div>

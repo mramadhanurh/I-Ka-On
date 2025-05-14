@@ -60,4 +60,13 @@ class ModelStore extends Model
             ->getResult();
     }
 
+    public function warna_produk($id_produk)
+    {
+        return $this->db->table('tbl_produk_warna')
+            ->join('tbl_warna', 'tbl_warna.id_warna=tbl_produk_warna.id_warna')
+            ->where('id_produk', $id_produk)
+            ->get()
+            ->getResultArray();
+    }
+
 }

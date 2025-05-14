@@ -31,7 +31,8 @@ class Belanja extends BaseController
             'name'    => $this->request->getPost('name'),
             'options' => array(
                 'gambar_produk' => $this->request->getPost('gambar_produk'),
-                'nama_satuan' => $this->request->getPost('nama_satuan'),
+                'nama_satuan'   => $this->request->getPost('nama_satuan'),
+                'warna'         => $this->request->getPost('warna'),
             )
         ));
         return redirect()->to(base_url('store'));

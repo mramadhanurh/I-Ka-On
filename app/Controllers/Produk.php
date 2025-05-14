@@ -289,15 +289,13 @@ class Produk extends BaseController
     {
         $id_produk = $this->request->getPost('id_produk');
         $id_warna = $this->request->getPost('id_warna');
-        $stok     = $this->request->getPost('stok');
 
         $this->ModelProdukWarna->insert([
             'id_produk' => $id_produk,
             'id_warna' => $id_warna,
-            'stok' => $stok,
         ]);
 
-        return redirect()->to('produk/warna/' . $id_produk)->with('success', 'Variasi Warna berhasil ditambahkan');
+        return redirect()->to('produk/warna/' . $id_produk)->with('pesan', 'Variasi Warna berhasil ditambahkan');
     }
 
     public function deleteWarna($id_produk_warna)
@@ -305,7 +303,7 @@ class Produk extends BaseController
         $data = $this->ModelProdukWarna->find($id_produk_warna);
         if ($data) {
             $this->ModelProdukWarna->delete($id_produk_warna);
-            return redirect()->to('produk/warna/' . $data['id_produk'])->with('success', 'Variasi Warna berhasil dihapus');
+            return redirect()->to('produk/warna/' . $data['id_produk'])->with('pesan', 'Variasi Warna berhasil dihapus');
         }
         return redirect()->back()->with('error', 'Data tidak ditemukan');
     }
