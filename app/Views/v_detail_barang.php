@@ -56,7 +56,7 @@
                             <input type="number" name="qty" class="form-control" value="1" min="1">
                         </div>
                         <div class="col-sm-8">
-                            <button type="submit" class="btn btn-primary btn-flat swalDefaultSuccess">
+                            <button type="submit" class="btn btn-primary btn-flat swalDefaultSuccess" id="btn-add-to-cart">
                                 <i class="fas fa-cart-plus fa-lg mr-2"></i>
                                 Add to Cart
                             </button>
@@ -80,6 +80,8 @@
 <!-- SweetAlert2 -->
 <script src="<?= base_url('AdminLTE') ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script>
+    const isLoggedIn = <?= session()->get('id_user') ? 'true' : 'false' ?>;
+
     $(document).ready(function() {
         $('.product-image-thumb').on('click', function () {
         var $image_element = $(this).find('img')
@@ -103,5 +105,13 @@
                 title: 'Barang Berhasil Ditambahkan Ke Keranjang!'
             })
         });
+    });
+
+    document.getElementById('btn-add-to-cart').addEventListener('click', function(e) {
+        if (!isLoggedIn) {
+            e.preventDefault();
+            alert('Silakan login terlebih dahulu!');
+            window.location.href = "<?= base_url('home') ?>";
+        }
     });
 </script>

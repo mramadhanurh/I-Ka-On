@@ -88,6 +88,12 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('Home') ?>">
+                    <i class="fas fa-user"></i>
+                </a>
+            </li>
+
         </ul>
     </div>
 </nav>

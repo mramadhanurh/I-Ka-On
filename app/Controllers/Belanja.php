@@ -22,6 +22,10 @@ class Belanja extends BaseController
 
     public function add()
     {
+        if (!session()->get('id_user')) {
+            return redirect()->to(base_url('home'))->with('error', 'Silakan login terlebih dahulu!');
+        }
+        
         $cart = \Config\Services::cart();
 
         $cart->insert(array(

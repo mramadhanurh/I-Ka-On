@@ -73,6 +73,8 @@ class Filters extends BaseConfig
                     'Home', 'Home/*',
                     '/',
                     'Pengguna', 'Pengguna/*',
+                    'Store', 'Store/*',
+                    'Belanja', 'Belanja/*',
                 ]
             ]
         ],
