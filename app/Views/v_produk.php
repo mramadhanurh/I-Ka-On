@@ -1,3 +1,43 @@
+<div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box shadow">
+        <span class="info-box-icon bg-success"><i class="far fa-copy"></i></span>
+
+        <div class="info-box-content">
+            <span class="info-box-text">Stok Tersedia</span>
+            <span class="info-box-number"><?= $jml_status_tersedia ?></span>
+        </div>
+        <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+</div>
+<!-- ./col -->
+<div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box shadow">
+        <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+
+        <div class="info-box-content">
+            <span class="info-box-text">Stok Rendah</span>
+            <span class="info-box-number"><?= $jml_status_rendah ?></span>
+        </div>
+        <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+</div>
+<!-- ./col -->
+<div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box shadow">
+        <span class="info-box-icon bg-danger"><i class="far fa-copy"></i></span>
+
+        <div class="info-box-content">
+            <span class="info-box-text">Stok Habis</span>
+            <span class="info-box-number"><?= $jml_status_habis ?></span>
+        </div>
+        <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+</div>
+<!-- ./col -->
+
 <div class="col-md-12">
     <div class="card card-pink">
         <div class="card-header">
@@ -37,6 +77,17 @@
                     </ul>
                 </div>
             <?php } ?>
+            <form method="get" action="<?= base_url('produk') ?>" class="form-inline mb-3">
+                <label class="mr-2">Filter Status:</label>
+                <select name="status" class="form-control mr-2">
+                    <option value="">-- Semua --</option>
+                    <option value="1" <?= @$_GET['status'] == 1 ? 'selected' : '' ?>>Stok Tersedia</option>
+                    <option value="2" <?= @$_GET['status'] == 2 ? 'selected' : '' ?>>Stok Rendah</option>
+                    <option value="3" <?= @$_GET['status'] == 3 ? 'selected' : '' ?>>Stok Habis</option>
+                </select>
+                <button type="submit" class="btn btn-primary">Tampilkan</button>
+            </form>
+
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr class="text-center">
@@ -48,6 +99,7 @@
                         <th>Harga Beli</th>
                         <th>Harga Jual</th>
                         <th>Stok</th>
+                        <th>Status</th>
                         <th>Foto</th>
                         <th width="100px">Aksi</th>
                     </tr>
@@ -64,6 +116,17 @@
                             <td class="text-right">Rp. <?= number_format($value['harga_beli'], 0) ?></td>
                             <td class="text-right">Rp. <?= number_format($value['harga_jual'], 0) ?></td>
                             <td class="text-center"><?= $value['stok'] ?></td>
+                            <td class="text-center">
+                                <?php if ($value['status'] == 1): ?>
+                                    <span class="badge badge-success">Stok Tersedia</span>
+                                <?php elseif ($value['status'] == 2): ?>
+                                    <span class="badge badge-warning">Stok Rendah</span>
+                                <?php elseif ($value['status'] == 3): ?>
+                                    <span class="badge badge-danger">Stok Habis</span>
+                                <?php else: ?>
+                                    <span class="badge badge-secondary">Status Tidak Diketahui</span>
+                                <?php endif; ?>
+                            </td>
                             <td class="text-center" width="70px"><img src="<?= base_url('foto/' . $value['gambar_produk']) ?>" width="70px"></td>
                             <td class="text-center">
                                 <a href="<?= base_url('produk/warna/' . $value['id_produk']) ?>" class="btn btn-success btn-sm btn-flat">
@@ -182,6 +245,19 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="">Status</label>
+                            <select name="status" class="form-control">
+                                <option value="1" selected>Stok Tersedia</option>
+                                <option value="2">Stok Rendah</option>
+                                <option value="3">Stok Habis</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
@@ -289,6 +365,19 @@
                             <div class="form-group">
                                 <label for="">Upload Foto</label>
                                 <input type="file" name="gambar_produk" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="">Status</label>
+                                <select name="status" class="form-control">
+                                    <option value="1" <?= $value['status'] == 1 ? 'Selected' : '' ?>>Stok Tersedia</option>
+                                    <option value="2" <?= $value['status'] == 2 ? 'Selected' : '' ?>>Stok Rendah</option>
+                                    <option value="3" <?= $value['status'] == 3 ? 'Selected' : '' ?>>Stok Habis</option>
+                                </select>
                             </div>
                         </div>
                     </div>

@@ -26,15 +26,28 @@ class Produk extends BaseController
 
     public function index()
     {
+        $status = $this->request->getGet('status'); // Ambil status dari parameter GET
+
+        if ($status) {
+            // Jika status dipilih, ambil data produk yang sesuai
+            $produk = $this->ModelProduk->getProdukByStatus($status);
+        } else {
+            // Jika tidak ada filter status, tampilkan semua produk
+            $produk = $this->ModelProduk->AllData();
+        }
+
         $data = [
             'judul' => 'Master Data',
             'subjudul' => 'Produk',
             'menu' => 'masterdata',
             'submenu' => 'produk',
             'page' => 'v_produk',
-            'produk' => $this->ModelProduk->AllData(),
+            'produk' => $produk,
             'kategori' => $this->ModelKategori->AllData(),
             'satuan' => $this->ModelSatuan->AllData(),
+            'jml_status_tersedia' => $this->ModelProduk->JumlahStatusTersedia(),
+            'jml_status_rendah' => $this->ModelProduk->JumlahStatusRendah(),
+            'jml_status_habis' => $this->ModelProduk->JumlahStatusHabis(),
         ];
         return view('v_template', $data);
     }
@@ -87,6 +100,7 @@ class Produk extends BaseController
                 'harga_beli' => $hargabeli,
                 'harga_jual' => $hargajual,
                 'stok' => $this->request->getPost('stok'),
+                'status' => $this->request->getPost('status'),
                 'gambar_produk' => $nama_file,
             ];
             $this->ModelProduk->InsertData($data);
@@ -204,6 +218,7 @@ class Produk extends BaseController
                 'harga_beli' => $hargabeli,
                 'harga_jual' => $hargajual,
                 'stok' => $this->request->getPost('stok'),
+                'status' => $this->request->getPost('status'),
                 'gambar_produk' => $nama_file,
             ];
             $this->ModelProduk->UpdateData($data);

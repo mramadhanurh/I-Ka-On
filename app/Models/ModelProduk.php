@@ -8,7 +8,7 @@ class ModelProduk extends Model
 {
     protected $table = 'tbl_produk';
     protected $primaryKey = 'id_produk';
-    protected $allowedFields = ['kode_produk', 'nama_produk', 'id_kategori', 'id_satuan', 'harga_beli', 'harga_jual', 'stok', 'gambar_produk'];
+    protected $allowedFields = ['kode_produk', 'nama_produk', 'id_kategori', 'id_satuan', 'harga_beli', 'harga_jual', 'stok', 'status', 'gambar_produk'];
 
     public function AllData()
     {
@@ -88,5 +88,36 @@ class ModelProduk extends Model
             ->join('tbl_kategori', 'tbl_kategori.id_kategori=tbl_produk.id_kategori')
             ->join('tbl_satuan', 'tbl_satuan.id_satuan=tbl_produk.id_satuan')
             ->orderBy('id_produk', 'DESC');
+    }
+
+    public function JumlahStatusTersedia()
+    {
+        return $this->db->table('tbl_produk')
+            ->where('status', 1)
+            ->countAllResults();
+    }
+
+    public function JumlahStatusRendah()
+    {
+        return $this->db->table('tbl_produk')
+            ->where('status', 2)
+            ->countAllResults();
+    }
+
+    public function JumlahStatusHabis()
+    {
+        return $this->db->table('tbl_produk')
+            ->where('status', 3)
+            ->countAllResults();
+    }
+
+    public function getProdukByStatus($status)
+    {
+        return $this->db->table('tbl_produk')
+            ->join('tbl_kategori', 'tbl_kategori.id_kategori = tbl_produk.id_kategori')
+            ->join('tbl_satuan', 'tbl_satuan.id_satuan = tbl_produk.id_satuan')
+            ->where('tbl_produk.status', $status)
+            ->get()
+            ->getResultArray();
     }
 }
