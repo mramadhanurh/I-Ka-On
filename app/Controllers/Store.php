@@ -9,6 +9,8 @@ use App\Models\ModelSatuan;
 use App\Models\ModelStore;
 use App\Models\ModelBoard;
 use App\Models\ModelTransaksi;
+use App\Models\ModelCart;
+use App\Models\ModelWarna;
 
 class Store extends BaseController
 {
@@ -20,6 +22,8 @@ class Store extends BaseController
         $this->ModelStore = new ModelStore();
         $this->ModelBoard = new ModelBoard();
         $this->ModelTransaksi = new ModelTransaksi();
+        $this->ModelCart = new ModelCart();
+        $this->ModelWarna = new ModelWarna();
     }
 
     public function index()
@@ -81,11 +85,29 @@ class Store extends BaseController
     // menampilkan detail isi keranjang
     public function cart()
     {
+        $cart = \Config\Services::cart();
+        $isi_cart = $cart->contents();
+    
+        // Ambil semua ID warna unik dari cart
+        $id_warnas = array_unique(array_column(array_map(function($item) {
+            return ['id_warna' => $item['options']['warna']];
+        }, $isi_cart), 'id_warna'));
+    
+        // Ambil data nama warna dari DB
+        $warnaMap = [];
+        if (!empty($id_warnas)) {
+            $warnaData = $this->ModelWarna->whereIn('id_warna', $id_warnas)->findAll();
+            foreach ($warnaData as $w) {
+                $warnaMap[$w['id_warna']] = $w['nama_warna'];
+            }
+        }
+    
         $data = [
             'judul' => 'View Cart',
             'isi' => 'v_cart',
             'kategori' => $this->ModelStore->AllData_Kategori(),
-            'cart' => \Config\Services::cart(),
+            'cart' => $cart,
+            'warnaMap' => $warnaMap, // <-- Tambahkan ini ke view
         ];
         return view('layout/v_wrapper_frontend', $data);
     }
@@ -148,16 +170,37 @@ class Store extends BaseController
                 $this->ModelTransaksi->simpan_rinci_transaksi($data_rinci);
             }
 
+            $this->ModelCart->deleteCartByUser(session()->get('id_user'));
+
             //================================================================
             session()->setFlashdata('pesan', 'Order Barang Berhasil Di Proses!');
             $cart->destroy();
             return redirect()->to(base_url('Store/cekout'));
         } else {
+
+            $cart = \Config\Services::cart();
+            $isi_cart = $cart->contents();
+
+            // Ambil semua ID warna unik dari cart
+            $id_warnas = array_unique(array_column(array_map(function($item) {
+                return ['id_warna' => $item['options']['warna']];
+            }, $isi_cart), 'id_warna'));
+
+            // Ambil data warna dari DB
+            $warnaMap = [];
+            if (!empty($id_warnas)) {
+                $warnaData = $this->ModelWarna->whereIn('id_warna', $id_warnas)->findAll();
+                foreach ($warnaData as $w) {
+                    $warnaMap[$w['id_warna']] = $w['nama_warna'];
+                }
+            }
+
             $data = [
                 'judul' => 'Cek Out Belanja',
                 'isi' => 'v_cekout',
                 'kategori' => $this->ModelStore->AllData_Kategori(),
-                'cart' => \Config\Services::cart(),
+                'cart' => $cart,
+                'warnaMap' => $warnaMap,
             ];
             return view('layout/v_wrapper_frontend', $data);
 

@@ -21,6 +21,7 @@
                         <th>Gambar</th>
                         <th>Nama Barang</th>
                         <th>Satuan</th>
+                        <th>Warna</th>
                         <th class="text-center">Hapus</th>
                     </tr>
                 </thead>
@@ -33,6 +34,7 @@
                             <td><img src="<?= base_url('foto/' . $value['options']['gambar_produk']) ?>" alt="User Avatar" class="img-size-50 mr-3 img-circle"></td>
                             <td><?= $value['name'] ?></td>
                             <td><?= $value['options']['nama_satuan'] ?></td>
+                            <td><?= $warnaMap[$value['options']['warna']] ?? '-' ?></td>
                             <td class="text-center">
                                 <a href="<?= base_url('belanja/delete/' . $value['rowid']) ?>" class="btn btn-sm btn-danger swalDefaultSuccess"><i class="fa fa-trash"></i></a>
                             </td>

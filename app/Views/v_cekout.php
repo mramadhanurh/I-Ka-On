@@ -20,6 +20,7 @@
                         <th class="text-center">Gambar</th>
                         <th class="text-center">Nama Barang</th>
                         <th class="text-center">Satuan</th>
+                        <th class="text-center">Warna</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                             <td class="text-center"><img src="<?= base_url('foto/' . $value['options']['gambar_produk']) ?>" alt="User Avatar" class="img-size-50 mr-3 img-circle"></td>
                             <td class="text-center"><?= $value['name'] ?></td>
                             <td class="text-center"><?= $value['options']['nama_satuan'] ?></td>
+                            <td class="text-center"><?= $warnaMap[$value['options']['warna']] ?? '-' ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>

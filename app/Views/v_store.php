@@ -83,9 +83,9 @@
                                             <a href="<?= base_url('store/detail_produk/' . $value['id_produk']) ?>" class="btn btn-sm btn-success">
                                                 <i class="fas fa-eye"></i>
                                             </a>
-                                            <button class="btn btn-sm btn-primary swalDefaultSuccess">
+                                            <!-- <button class="btn btn-sm btn-primary swalDefaultSuccess">
                                                 <i class="fas fa-cart-plus"></i> Add
-                                            </button>
+                                            </button> -->
                                         </div>
                                     </div>
                                 </div>

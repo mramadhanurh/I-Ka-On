@@ -35,4 +35,9 @@ class ModelWarna extends Model
             ->where('id_warna', $data['id_warna'])
             ->delete($data);
     }
+
+    public function getWarnaById($id)
+    {
+        return $this->find($id);
+    }
 }

@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\ModelUser;
+use App\Models\ModelCart;
 
 class Home extends BaseController
 {
     public function __construct()
     {
         $this->ModelUser = new ModelUser();
+        $this->ModelCart = new ModelCart();
     }
 
     public function index()
@@ -46,6 +48,24 @@ class Home extends BaseController
                 session()->set('id_user', $cek_login['id_user']);
                 session()->set('nama_user', $cek_login['nama_user']);
                 session()->set('level', $cek_login['level']);
+                // Load cart dari database ke session
+                    $cart = \Config\Services::cart();
+                    $cart->destroy(); // kosongkan dulu
+
+                    $cartItems = $this->ModelCart->getCartByUser($cek_login['id_user']);
+                    foreach ($cartItems as $item) {
+                        $cart->insert([
+                            'id'    => $item['id_produk'],
+                            'qty'   => $item['qty'],
+                            'price' => $item['price'],
+                            'name'  => $item['name'],
+                            'options' => [
+                                'gambar_produk' => $item['gambar_produk'],
+                                'nama_satuan'   => $item['nama_satuan'],
+                                'warna'         => $item['warna'],
+                            ]
+                        ]);
+                    }
                 if ($cek_login['level'] == 1) {
                     return redirect()->to(base_url('Admin'));
                 } else {
@@ -64,6 +84,9 @@ class Home extends BaseController
 
     public function Logout()
     {
+        $cart = \Config\Services::cart();
+        $cart->destroy(); // kosongkan cart session saat logout
+
         session()->remove('id_user');
         session()->remove('nama_user');
         session()->remove('level');
