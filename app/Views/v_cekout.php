@@ -82,52 +82,54 @@
     <?php
     helper('text');
     echo form_open('store/cekout');
-    $no_order = date('Ymd') . strtoupper(random_string('alnum', 8));
+    $no_order = 'INV-' . date('Ymd') . strtoupper(random_string('alnum', 8));
 
     ?>
     <div class="row">
         <!-- accepted payments column -->
         <div class="col-sm-8 invoice-col">
-            Order Barang :
+            Alamat Pengiriman :
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>Nama</label>
-                        <input name="nama_transaksi" class="form-control">
+                        <label>Nama Lengkap</label>
+                        <input name="nama_lengkap" class="form-control">
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>NRP</label>
-                        <input name="nrp" class="form-control">
+                        <label>No Telpon</label>
+                        <input name="no_telpon" class="form-control">
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>No Hp</label>
-                        <input name="no_hp" class="form-control">
+                        <label>Kota</label>
+                        <input name="kota" class="form-control">
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>Dept</label>
-                        <select name="dept" class="form-control">
-                            <option value="">--Pilih Dept--</option>
-                            <option value="HCGS">HCGS</option>
-                            <option value="Operation">Operation</option>
-                            <option value="Logistic">Logistic</option>
-                            <option value="Plant">Plant</option>
-                            <option value="Engineering">Engineering</option>
-                            <option value="Produksi">Produksi</option>
-                            <option value="SHE">SHE</option>
-                            <option value="TDC">TDC</option>
-                            <option value="SO">SO</option>
+                        <label>Kecamatan</label>
+                        <input name="kecamatan" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Pengiriman</label>
+                        <select name="pengiriman" class="form-control">
+                            <option value="">--Pilih Pengiriman--</option>
+                            <option value="1">Datang ke Toko</option>
+                            <option value="2">GrabExpress</option>
+                            <option value="3">Gosend</option>
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Keterangan</label>
-                    <textarea name="keterangan" class="form-control" cols="100" rows="5"></textarea>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Alamat Lengkap</label>
+                        <textarea name="alamat_lengkap" class="form-control" cols="100" rows="3"></textarea>
+                    </div>
                 </div>
             </div>
         </div>

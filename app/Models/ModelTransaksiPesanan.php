@@ -8,7 +8,7 @@ class ModelTransaksiPesanan extends Model
 {
     protected $table = 'tbl_transaksi';
     protected $primaryKey = 'id_transaksi';
-    protected $allowedFields = ['no_order', 'nama_transaksi', 'nrp', 'no_hp', 'dept', 'keterangan', 'tgl_transaksi', 'grand_total', 'status_transaksi', 'status_diambil'];
+    protected $allowedFields = ['no_order', 'nama_lengkap', 'no_telpon', 'kota', 'kecamatan', 'alamat_lengkap', 'pengiriman', 'tgl_transaksi', 'grand_total', 'status_transaksi', 'status_diambil'];
 
     public function AllData()
     {

@@ -115,29 +115,29 @@ class Store extends BaseController
     public function cekout()
     {
         if ($this->validate([
-            'nama_transaksi' => [
-                'label' => 'Nama',
+            'nama_lengkap' => [
+                'label' => 'Nama Lengkap',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib Di isi!',
                 ]
             ],
-            'nrp' => [
-                'label' => 'NRP',
+            'no_telpon' => [
+                'label' => 'No Telpon',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib Di isi!',
                 ]
             ],
-            'no_hp' => [
-                'label' => 'No Hp',
+            'alamat_lengkap' => [
+                'label' => 'Alamat Lengkap',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib Di isi!',
                 ]
             ],
-            'dept' => [
-                'label' => 'Dept',
+            'pengiriman' => [
+                'label' => 'Pengiriman',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib Di isi!',
@@ -149,11 +149,12 @@ class Store extends BaseController
             $data = [
                 'no_order' => $this->request->getPost('no_order'),
                 'tgl_transaksi' => date('Y-m-d'),
-                'nama_transaksi' => $this->request->getPost('nama_transaksi'),
-                'nrp' => $this->request->getPost('nrp'),
-                'no_hp' => $this->request->getPost('no_hp'),
-                'dept' => $this->request->getPost('dept'),
-                'keterangan' => $this->request->getPost('keterangan'),
+                'nama_lengkap' => $this->request->getPost('nama_lengkap'),
+                'no_telpon' => $this->request->getPost('no_telpon'),
+                'kota' => $this->request->getPost('kota'),
+                'kecamatan' => $this->request->getPost('kecamatan'),
+                'alamat_lengkap' => $this->request->getPost('alamat_lengkap'),
+                'pengiriman' => $this->request->getPost('pengiriman'),
                 'grand_total' => $this->request->getPost('grand_total'),
                 'status_transaksi' => '0',
             ];
