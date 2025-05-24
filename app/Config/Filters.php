@@ -60,6 +60,7 @@ class Filters extends BaseConfig
                     'Satuan', 'Satuan/*',
                     'Warna', 'Warna/*',
                     'User', 'User/*',
+                    'Rekening', 'Rekening/*',
                     'BarangMasuk', 'BarangMasuk/*',
                     'BarangKeluar', 'BarangKeluar/*',
                     'Board', 'Board/*',

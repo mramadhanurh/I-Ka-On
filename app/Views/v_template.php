@@ -159,6 +159,12 @@
                                         <p>User</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="<?= base_url('Rekening') ?>" class="nav-link <?= $submenu == 'rekening' ? 'active' : '' ?>">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Rekening</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item <?= $menu == 'barang' ? 'menu-open' : '' ?>">

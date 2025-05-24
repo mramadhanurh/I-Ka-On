@@ -31,12 +31,11 @@
                 <thead>
                     <tr class="text-center">
                         <th width="50px">No</th>
+                        <th>No Invoice</th>
+                        <th>Nama Lengkap</th>
+                        <th>No Telpon</th>
+                        <th>Pengiriman</th>
                         <th>Tanggal</th>
-                        <th>NRP</th>
-                        <th>Nama</th>
-                        <th>Dept</th>
-                        <th>Status Konfirmasi</th>
-                        <th>Status Diambil</th>
                         <th width="130px">Aksi</th>
                     </tr>
                 </thead>
@@ -45,24 +44,21 @@
                     foreach ($pesanan as $key => $value) { ?>
                         <tr>
                             <td><?= $no++ ?></td>
+                            <td><?= $value['no_order'] ?></td>
+                            <td><?= $value['nama_lengkap'] ?></td>
+                            <td class="text-center"><?= $value['no_telpon'] ?></td>
+                            <td class="text-center">
+                                <?php if ($value['pengiriman'] == 1): ?>
+                                    <span class="badge badge-primary">Datang ke Toko</span>
+                                <?php elseif ($value['pengiriman'] == 2): ?>
+                                    <span class="badge badge-success">GrabExpress</span>
+                                <?php elseif ($value['pengiriman'] == 3): ?>
+                                    <span class="badge badge-success">Gosend</span>
+                                <?php else: ?>
+                                    <span class="badge badge-secondary">-</span>
+                                <?php endif; ?>
+                            </td>
                             <td><?= date('d-m-Y', strtotime($value['tgl_transaksi'])) ?></td>
-                            <td><?= $value['nrp'] ?></td>
-                            <td class="text-center"><?= $value['nama_transaksi'] ?></td>
-                            <td class="text-center"><?= $value['dept'] ?></td>
-                            <td class="text-center">
-                                <?php if ($value['status_transaksi'] == 0) : ?>
-                                    <span class="badge bg-danger">Belum Konfirmasi</span>
-                                <?php elseif ($value['status_transaksi'] == 1) : ?>
-                                    <span class="badge bg-success">Sudah Konfirmasi</span>
-                                <?php endif; ?>
-                            </td>
-                            <td class="text-center">
-                                <?php if ($value['status_diambil'] == 0) : ?>
-                                    <span class="badge bg-danger">Belum Diambil</span>
-                                <?php elseif ($value['status_diambil'] == 1) : ?>
-                                    <span class="badge bg-success">Sudah Diambil</span>
-                                <?php endif; ?>
-                            </td>
                             <td class="text-center">
                             <a href="<?= base_url('Pesanan/updateDiambil/' . $value['id_transaksi']) ?>" class="btn btn-secondary btn-sm btn-flat"><i class="fas fa-shopping-basket"></i></a>
                                 <a href="<?= base_url('Pesanan/DetailData/' . $value['id_transaksi']) ?>" class="btn btn-primary btn-sm btn-flat"><i class="fas fa-eye"></i></a>
