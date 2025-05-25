@@ -147,6 +147,7 @@ class Store extends BaseController
         ])) {
             // simpan ke table transaksi
             $data = [
+                'id_user' => session()->get('id_user'),
                 'no_order' => $this->request->getPost('no_order'),
                 'tgl_transaksi' => date('Y-m-d'),
                 'nama_lengkap' => $this->request->getPost('nama_lengkap'),

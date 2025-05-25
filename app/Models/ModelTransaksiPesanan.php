@@ -8,11 +8,20 @@ class ModelTransaksiPesanan extends Model
 {
     protected $table = 'tbl_transaksi';
     protected $primaryKey = 'id_transaksi';
-    protected $allowedFields = ['no_order', 'nama_lengkap', 'no_telpon', 'kota', 'kecamatan', 'alamat_lengkap', 'pengiriman', 'tgl_transaksi', 'grand_total', 'status_transaksi', 'status_diambil'];
+    protected $allowedFields = ['id_user', 'no_order', 'nama_lengkap', 'no_telpon', 'kota', 'kecamatan', 'alamat_lengkap', 'pengiriman', 'tgl_transaksi', 'grand_total', 'status_transaksi', 'status_diambil', 'bukti_transaksi'];
 
     public function AllData()
     {
         return $this->db->table('tbl_transaksi')
+            ->orderBy('id_transaksi', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function AllDataTransaksi($id_user)
+    {
+        return $this->db->table('tbl_transaksi')
+            ->where('id_user', $id_user)
             ->orderBy('id_transaksi', 'DESC')
             ->get()
             ->getResultArray();

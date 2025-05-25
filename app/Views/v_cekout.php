@@ -21,6 +21,7 @@
                         <th class="text-center">Nama Barang</th>
                         <th class="text-center">Satuan</th>
                         <th class="text-center">Warna</th>
+                        <th class="text-center">Harga</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,6 +34,7 @@
                             <td class="text-center"><?= $value['name'] ?></td>
                             <td class="text-center"><?= $value['options']['nama_satuan'] ?></td>
                             <td class="text-center"><?= $warnaMap[$value['options']['warna']] ?? '-' ?></td>
+                            <td class="text-center"><?= $value['price'] ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
@@ -135,7 +137,10 @@
         </div>
         <!-- /.col -->
         <div class="col-4">
-            
+            <div class="form-group">
+                <label class="text-right d-block">Grand Total :</label>
+                <input value="<?= $cart->total() ?>" class="form-control text-right" readonly>
+            </div>
         </div>
         <!-- /.col -->
     </div>

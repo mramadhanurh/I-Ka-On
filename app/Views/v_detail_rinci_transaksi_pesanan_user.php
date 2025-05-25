@@ -4,9 +4,6 @@
             <h3 class="card-title"><?= $subjudul ?></h3>
 
             <div class="card-tools">
-                <a href="<?= base_url('Pesanan/exportExcelDetailTransaksi/' . $transaksi['id_transaksi']); ?>" class="btn btn-success btn-tool">
-                    <i class="fas fa-file-excel"></i> Export Excel
-                </a>
 
             </div>
             <!-- /.card-tools -->
@@ -27,11 +24,7 @@
                 </tr>
                 <tr>
                     <th>No Telpon/WA</th>
-                    <td>
-                        <a href="https://wa.me/62<?= substr($transaksi['no_telpon'], 1) ?>?text=Halo%20Saya%20Admin,%20Ingin%20Follow%20Up%20Pesanan%20ya%20kak" target="_blank">
-                            <?= $transaksi['no_telpon']; ?>
-                        </a>
-                    </td>
+                    <td><?= $transaksi['no_telpon']; ?></td>
                 </tr>
                 <tr>
                     <th>Kota</th>
@@ -72,6 +65,18 @@
                 <tr>
                     <th>Alamat Lengkap</th>
                     <td><?= $transaksi['alamat_lengkap']; ?></td>
+                </tr>
+                <tr>
+                    <th>Bukti Transaksi</th>
+                    <td>
+                        <?php if (!empty($transaksi['bukti_transaksi'])) : ?>
+                            <a href="<?= base_url('bukti_transaksi/' . $transaksi['bukti_transaksi']) ?>" target="_blank">
+                                <img src="<?= base_url('bukti_transaksi/' . $transaksi['bukti_transaksi']) ?>" alt="Bukti Transaksi" width="100">
+                            </a>
+                        <?php else : ?>
+                            <span class="text-danger">Belum Upload</span>
+                        <?php endif; ?>
+                    </td>
                 </tr>
             </table>
 

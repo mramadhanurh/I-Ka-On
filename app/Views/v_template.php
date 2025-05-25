@@ -264,6 +264,24 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="<?= base_url('Pesananuser') ?>" class="nav-link <?= $menu == 'transaksipesanan' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-shopping-cart"></i>
+                                <p>
+                                    Transaksi Pesanan
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="<?= base_url('') ?>" class="nav-link">
+                                <i class="nav-icon fas fa-store"></i>
+                                <p>
+                                    Katalog Online
+                                </p>
+                            </a>
+                        </li>
+
                         <?php endif; ?>
                     </ul>
                 </nav>
