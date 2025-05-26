@@ -17,8 +17,9 @@
                 <div class="form-group">
                     <label>Status Transaksi</label>
                     <select name="status_transaksi" class="form-control">
-                        <option value="0" <?= ($transaksi['status_transaksi'] == 0) ? 'selected' : ''; ?>>Belum Konfirmasi</option>
-                        <option value="1" <?= ($transaksi['status_transaksi'] == 1) ? 'selected' : ''; ?>>Sudah Konfirmasi</option>
+                        <option value="0" <?= ($transaksi['status_transaksi'] == 0) ? 'selected' : ''; ?>>Konfirmasi</option>
+                        <option value="1" <?= ($transaksi['status_transaksi'] == 1) ? 'selected' : ''; ?>>Proses</option>
+                        <option value="2" <?= ($transaksi['status_transaksi'] == 2) ? 'selected' : ''; ?>>Selesai</option>
                     </select>
                 </div>
 

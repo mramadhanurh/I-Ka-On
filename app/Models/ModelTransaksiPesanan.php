@@ -47,5 +47,34 @@ class ModelTransaksiPesanan extends Model
     {
         return $this->delete($id_transaksi);
     }
+
+    public function getProdukByStatus($status)
+    {
+        return $this->db->table('tbl_transaksi')
+            ->where('tbl_transaksi.status_transaksi', $status)
+            ->get()
+            ->getResultArray();
+    }
+
+    public function StatusKonfirmasi()
+    {
+        return $this->db->table('tbl_transaksi')
+            ->where('status_transaksi', 0)
+            ->countAllResults();
+    }
+
+    public function StatusProses()
+    {
+        return $this->db->table('tbl_transaksi')
+            ->where('status_transaksi', 1)
+            ->countAllResults();
+    }
+
+    public function StatusSelesai()
+    {
+        return $this->db->table('tbl_transaksi')
+            ->where('status_transaksi', 2)
+            ->countAllResults();
+    }
     
 }

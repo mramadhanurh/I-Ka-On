@@ -66,12 +66,32 @@
                 <tr>
                     <th>Status Transaksi</th>
                     <td>
-                        <?= ($transaksi['status_transaksi'] == 0) ? '<span class="badge bg-danger">Belum Konfirmasi</span>' : '<span class="badge bg-success">Sudah Konfirmasi</span>'; ?>
+                        <?php if ($transaksi['status_transaksi'] == 0): ?>
+                            <span class="badge badge-primary">Konfirmasi</span>
+                        <?php elseif ($transaksi['status_transaksi'] == 1): ?>
+                            <span class="badge badge-success">Proses</span>
+                        <?php elseif ($transaksi['status_transaksi'] == 2): ?>
+                            <span class="badge badge-info">Selesai</span>
+                        <?php else: ?>
+                            <span class="badge badge-secondary">-</span>
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
                     <th>Alamat Lengkap</th>
                     <td><?= $transaksi['alamat_lengkap']; ?></td>
+                </tr>
+                <tr>
+                    <th>Bukti Transaksi</th>
+                    <td>
+                        <?php if (!empty($transaksi['bukti_transaksi'])) : ?>
+                            <a href="<?= base_url('bukti_transaksi/' . $transaksi['bukti_transaksi']) ?>" target="_blank">
+                                <img src="<?= base_url('bukti_transaksi/' . $transaksi['bukti_transaksi']) ?>" alt="Bukti Transaksi" width="100">
+                            </a>
+                        <?php else : ?>
+                            <span class="text-danger">Belum Upload</span>
+                        <?php endif; ?>
+                    </td>
                 </tr>
             </table>
 

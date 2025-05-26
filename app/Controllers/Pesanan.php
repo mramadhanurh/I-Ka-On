@@ -20,13 +20,26 @@ class Pesanan extends BaseController
 
     public function index()
     {
+        $status = $this->request->getGet('status_transaksi'); // Ambil status_transaksi dari parameter GET
+
+        if ($status) {
+            // Jika status dipilih, ambil data produk yang sesuai
+            $pesanan = $this->ModelTransaksiPesanan->getProdukByStatus($status);
+        } else {
+            // Jika tidak ada filter status, tampilkan semua produk
+            $pesanan = $this->ModelTransaksiPesanan->AllData();
+        }
+        
         $data = [
             'judul' => 'Transaksi',
             'subjudul' => 'Transaksi',
             'menu' => 'transaksi',
             'submenu' => '',
             'page' => 'v_transaksi_pesanan',
-            'pesanan' => $this->ModelTransaksiPesanan->AllData(),
+            'pesanan' => $pesanan,
+            'jml_status_konfirmasi' => $this->ModelTransaksiPesanan->StatusKonfirmasi(),
+            'jml_status_proses' => $this->ModelTransaksiPesanan->StatusProses(),
+            'jml_status_selesai' => $this->ModelTransaksiPesanan->StatusSelesai(),
         ];
         return view('v_template', $data);
     }
