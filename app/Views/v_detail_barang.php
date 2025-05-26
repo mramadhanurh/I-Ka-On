@@ -75,6 +75,44 @@
 </div>
 <!-- /.card -->
 
+<br>
+<h4>Rekomendasi Produk Terbaik</h4>
+<div class="card card-solid">
+    <div class="card-body pb-0">
+        <div class="row">
+            <?php foreach ($rekomendasi as $produk) : ?>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="<?= base_url('foto/' . $produk['gambar_produk']) ?>" class="card-img-top" alt="<?= $produk['nama_produk'] ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $produk['nama_produk'] ?></h5> <br>
+                            <p>Rating: <?= number_format($produk['rata_rating'], 1) ?> ⭐</p>
+
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="text-left">
+                                            <h5>Rp <?= number_format($produk['harga_jual'], 0) ?></h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="text-right">
+                                            <a href="<?= base_url('store/detail_produk/' . $produk['id_produk']) ?>" class="btn btn-sm btn-success">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+
 
 
 <!-- SweetAlert2 -->

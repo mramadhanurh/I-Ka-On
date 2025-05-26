@@ -120,4 +120,17 @@ class ModelProduk extends Model
             ->get()
             ->getResultArray();
     }
+
+    public function getRekomendasiProduk()
+    {
+        return $this->db->table('tbl_produk')
+            ->select('tbl_produk.*, AVG(tbl_rating.rating) as rata_rating')
+            ->join('tbl_rating', 'tbl_rating.id_produk = tbl_produk.id_produk')
+            ->groupBy('tbl_produk.id_produk')
+            ->having('rata_rating >=', 3) // Filter misal minimal 3, atau sesuaikan
+            ->orderBy('RAND()') // Acak urutan data
+            ->limit(3)
+            ->get()
+            ->getResultArray();
+    }
 }

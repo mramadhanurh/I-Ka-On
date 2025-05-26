@@ -40,6 +40,7 @@ class Store extends BaseController
             $produk = $this->ModelProduk->getPagingProduk()->paginate(6, 'product_pages');
             $pager = $this->ModelProduk->pager; // Gunakan pagination hanya di sini
         }
+        $rekomendasi = $this->ModelProduk->getRekomendasiProduk();
 
         $data = [
             'judul' => 'Home',
@@ -50,6 +51,7 @@ class Store extends BaseController
             'cart' => \Config\Services::cart(),
             'slider' => $this->ModelBoard->AllData(),
             'keyword' => $keyword,
+            'rekomendasi' => $rekomendasi,
         ];
         return view('layout/v_wrapper_frontend', $data);
     }
@@ -70,6 +72,8 @@ class Store extends BaseController
 
     public function detail_produk($id_produk)
     {
+        $rekomendasi = $this->ModelProduk->getRekomendasiProduk();
+
         $data = [
             'judul' => 'Detail Barang',
             'isi' => 'v_detail_barang',
@@ -78,6 +82,7 @@ class Store extends BaseController
             'warna'     => $this->ModelStore->warna_produk($id_produk),
             'kategori' => $this->ModelStore->AllData_Kategori(),
             'cart' => \Config\Services::cart(),
+            'rekomendasi' => $rekomendasi,
         ];
         return view('layout/v_wrapper_frontend', $data);
     }
