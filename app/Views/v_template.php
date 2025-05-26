@@ -22,6 +22,28 @@
     <!-- Select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.5.2/dist/select2-bootstrap4.min.css">
+    <style>
+        .rating {
+            display: inline-flex;
+            flex-direction: row-reverse;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 20px;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #ffc107;
+        }
+    </style>
 
 
     <!-- jQuery -->

@@ -12,6 +12,7 @@ class Pesananuser extends BaseController
 {
     public function __construct()
     {
+        $this->db = \Config\Database::connect();
         $this->ModelTransaksiPesanan = new ModelTransaksiPesanan();
         $this->ModelRinciTransaksi = new ModelRinciTransaksi();
         $this->ModelProduk = new ModelProduk();
@@ -92,5 +93,61 @@ class Pesananuser extends BaseController
         }
 
         return redirect()->to(base_url('Pesananuser'));
+    }
+
+    public function updateRating($id_transaksi)
+    {
+        $transaksi = $this->ModelTransaksiPesanan->getDetail($id_transaksi);
+        $rinciTransaksi = $this->ModelRinciTransaksi->getRinciByOrder($transaksi['no_order']);
+
+        $data = [
+            'judul' => 'Rating Produk',
+            'subjudul' => 'Rating Produk',
+            'menu' => 'transaksipesanan',
+            'submenu' => '',
+            'page' => 'v_update_rating_produk',
+            'transaksi' => $transaksi,
+            'rinciTransaksi' => $rinciTransaksi,
+        ];
+
+        return view('v_template', $data);
+    }
+
+    public function saveUpdateRating($id_transaksi)
+    {
+        $transaksi = $this->ModelTransaksiPesanan->getDetail($id_transaksi);
+        $rinciTransaksi = $this->ModelRinciTransaksi->getRinciByOrder($transaksi['no_order']);
+        $id_user = session()->get('id_user');
+
+        foreach ($rinciTransaksi as $rinci) {
+            $id_produk = $rinci['id_produk'];
+            $rating = $this->request->getPost('rating_' . $id_produk);
+
+            if ($rating) {
+                // Cek apakah user sudah pernah memberi rating untuk produk ini
+                $cek = $this->db->table('tbl_rating')->where([
+                    'id_user' => $id_user,
+                    'id_produk' => $id_produk,
+                ])->get()->getRowArray();
+
+                if ($cek) {
+                    // Update rating lama
+                    $this->db->table('tbl_rating')->where('id_rating', $cek['id_rating'])->update([
+                        'rating' => $rating,
+                        'tanggal_rating' => date('Y-m-d H:i:s'),
+                    ]);
+                } else {
+                    // Tambah rating baru
+                    $this->db->table('tbl_rating')->insert([
+                        'id_user' => $id_user,
+                        'id_produk' => $id_produk,
+                        'rating' => $rating,
+                        'tanggal_rating' => date('Y-m-d H:i:s'),
+                    ]);
+                }
+            }
+        }
+
+        return redirect()->to(base_url('Pesananuser'))->with('pesan', 'Rating berhasil disimpan');
     }
 }
