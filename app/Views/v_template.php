@@ -221,6 +221,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('Penjualan') ?>" class="nav-link <?= $menu == '' ? 'active' : '' ?>">
+                                <i class="nav-icon fas fa-shopping-basket"></i>
+                                <p>
+                                    Transaksi Penjualan
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item <?= $menu == 'laporan' ? 'menu-open' : '' ?>">
                             <a href="#" class="nav-link <?= $menu == 'laporan' ? 'active' : '' ?>">
                                 <i class="nav-icon fas fa-file-invoice"></i>

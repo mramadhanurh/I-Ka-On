@@ -61,6 +61,7 @@ class Filters extends BaseConfig
                     'Warna', 'Warna/*',
                     'User', 'User/*',
                     'Rekening', 'Rekening/*',
+                    'Penjualan', 'Penjualan/*',
                     'BarangMasuk', 'BarangMasuk/*',
                     'BarangKeluar', 'BarangKeluar/*',
                     'Board', 'Board/*',
