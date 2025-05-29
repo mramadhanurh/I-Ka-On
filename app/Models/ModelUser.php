@@ -6,6 +6,10 @@ use CodeIgniter\Model;
 
 class ModelUser extends Model
 {
+    protected $table = 'tbl_user';
+    protected $primaryKey = 'id_user';
+    protected $allowedFields = ['nama_user', 'email', 'password', 'level'];
+
     public function AllData()
     {
         return $this->db->table('tbl_user')

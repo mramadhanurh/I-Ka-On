@@ -93,4 +93,56 @@ class Home extends BaseController
         session()->setFlashdata('pesan', 'Anda telah berhasil Logout!');
         return redirect()->to(base_url('Home'));
     }
+
+    public function SettingUser()
+    {
+        $session = session();
+        $id_user = $session->get('id_user'); // Pastikan session ada id_user
+        $model = new \App\Models\ModelUser();
+        $user = $model->find($id_user);
+
+        if (!$user) {
+            return redirect()->to('/')->with('error', 'User tidak ditemukan.');
+        }
+
+        $data = [
+            'judul' => 'Setting Akun',
+            'subjudul' => 'Setting Akun',
+            'menu' => 'dashboard',
+            'user' => $user,
+            'submenu' => '',
+            'page' => 'v_setting_user',
+        ];
+        return view('v_template', $data);
+    }
+
+    public function SettingUserSave()
+    {
+        $session = session();
+        $id_user = $session->get('id_user');
+
+        $model = new \App\Models\ModelUser();
+        $user = $model->find($id_user);
+
+        if (!$user) {
+            return redirect()->to('/')->with('error', 'User tidak ditemukan.');
+        }
+
+        $nama_user = $this->request->getPost('nama_user');
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $data = [
+            'nama_user' => $nama_user,
+            'email' => $email
+        ];
+
+        if (!empty($password)) {
+            $data['password'] = sha1($password); // Hash password jika diisi
+        }
+
+        $model->update($id_user, $data);
+
+        return redirect()->to(base_url('Home/SettingUser'))->with('success', 'Akun berhasil diperbarui.');
+    }
 }

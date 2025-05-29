@@ -92,6 +92,11 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('Home/SettingUser') ?>">
+                        <i class="fas fa-user-cog"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
