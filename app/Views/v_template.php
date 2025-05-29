@@ -244,27 +244,27 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?= base_url('Laporan/LaporanHarian') ?>" class="nav-link <?= $submenu == 'laporan-harian' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('Laporan/LaporanStokMasukProduk') ?>" class="nav-link <?= $submenu == 'laporan-stok-masuk-produk' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Laporan Harian</p>
+                                        <p>Stok Masuk Produk</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= base_url('Laporan/LaporanBulanan') ?>" class="nav-link <?= $submenu == 'laporan-bulanan' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('Laporan/LaporanStokKeluarProduk') ?>" class="nav-link <?= $submenu == 'laporan-stok-keluar-produk' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Laporan Bulanan</p>
+                                        <p>Stok Keluar Produk</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= base_url('Laporan/LaporanTahunan') ?>" class="nav-link <?= $submenu == 'laporan-tahunan' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('Laporan/LaporanStokMasukBahanBaku') ?>" class="nav-link <?= $submenu == 'laporan-stok-masuk-bahan-baku' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Laporan Tahunan</p>
+                                        <p>Stok Masuk Bahan Baku</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= base_url('Laporan/LaporanTanggal') ?>" class="nav-link <?= $submenu == 'laporan-tanggal' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('Laporan/LaporanStokKeluarBahanBaku') ?>" class="nav-link <?= $submenu == 'laporan-stok-keluar-bahan-baku' ? 'active' : '' ?>">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Laporan Tanggal</p>
+                                        <p>Stok Keluar Bahan Baku</p>
                                     </a>
                                 </li>
                             </ul>

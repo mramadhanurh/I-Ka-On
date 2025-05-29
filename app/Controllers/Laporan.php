@@ -15,191 +15,175 @@ class Laporan extends BaseController
     }
 
     // Menampilkan halaman laporan harian
-    public function LaporanHarian()
+    public function LaporanStokMasukProduk()
     {
         $data = [
             'judul' => 'Laporan',
-            'subjudul' => 'Laporan Harian',
+            'subjudul' => 'Laporan Stok Masuk Produk',
             'menu' => 'laporan',
-            'submenu' => 'laporan-harian',
-            'page' => 'laporan/v_laporan_harian',
+            'submenu' => 'laporan-stok-masuk-produk',
+            'page' => 'laporan/v_laporan_stok_masuk_produk',
             'web' => $this->ModelAdmin->DetailData(),
         ];
         return view('v_template', $data);
     }
 
     // Mengambil data laporan harian berdasarkan tanggal
-    public function ViewLaporanHarian()
+    public function ViewLaporanStokMasukProduk()
     {
         $tgl = $this->request->getPost('tgl');
         $data = [
-            'judul' => 'Laporan Harian',
-            'dataharian' => $this->ModelLaporan->DataHarian($tgl),
+            'judul' => 'Laporan Stok Masuk Produk',
+            'datastokmasukproduk' => $this->ModelLaporan->DataStokMasukProduk($tgl),
             'web' => $this->ModelAdmin->DetailData(),
             'tgl' => $tgl,
         ];
 
         $response = [
-            'data' => view('laporan/v_tabel_laporan_harian', $data)
+            'data' => view('laporan/v_tabel_laporan_stok_masuk_produk', $data)
         ];
 
         echo json_encode($response);
     }
 
     // Mencetak laporan harian berdasarkan tanggal
-    public function PrintLaporanHarian($tgl)
+    public function PrintLaporanStokMasukProduk($tgl)
     {
         $data = [
-            'judul' => 'Laporan Harian',
+            'judul' => 'Laporan Stok Masuk Produk',
             'web' => $this->ModelAdmin->DetailData(),
-            'page' => 'laporan/v_print_lap_harian',
-            'dataharian' => $this->ModelLaporan->DataHarian($tgl),
+            'page' => 'laporan/v_print_lap_stok_masuk_produk',
+            'datastokmasukproduk' => $this->ModelLaporan->DataStokMasukProduk($tgl),
             'tgl' => $tgl,
         ];
         return view('laporan/v_template_print_laporan', $data);
     }
 
-    public function LaporanBulanan()
+    public function LaporanStokKeluarProduk()
     {
         $data = [
             'judul' => 'Laporan',
-            'subjudul' => 'Laporan Bulanan',
+            'subjudul' => 'Laporan Stok Keluar Produk',
             'menu' => 'laporan',
-            'submenu' => 'laporan-bulanan',
-            'page' => 'laporan/v_laporan_bulanan',
+            'submenu' => 'laporan-stok-keluar-produk',
+            'page' => 'laporan/v_laporan_stok_keluar_produk',
             'web' => $this->ModelAdmin->DetailData(),
         ];
         return view('v_template', $data);
     }
 
-    public function ViewLaporanBulanan()
+    public function ViewLaporanStokKeluarProduk()
     {
-        $bulan = $this->request->getPost('bulan');
-        $tahun = $this->request->getPost('tahun');
-
-        // Ambil data grand_total dan qty
-        $grandTotalData = $this->ModelLaporan->getGrandTotalBulanan($bulan, $tahun);
-        $qtyData = $this->ModelLaporan->getQtyBulanan($bulan, $tahun);
-
-        // Gabungkan data berdasarkan tgl_transaksi
-        $dataBulanan = [];
-        foreach ($grandTotalData as $gt) {
-            $tgl = $gt['tgl_transaksi'];
-            $dataBulanan[$tgl]['tgl_transaksi'] = $tgl;
-            $dataBulanan[$tgl]['total_grand'] = $gt['total_grand'];
-            $dataBulanan[$tgl]['total_qty'] = 0; // Inisialisasi total_qty
-
-            // Cari total_qty dari qtyData
-            foreach ($qtyData as $qty) {
-                if ($qty['tgl_transaksi'] == $tgl) {
-                    $dataBulanan[$tgl]['total_qty'] = $qty['total_qty'];
-                }
-            }
-        }
-
+        $tgl = $this->request->getPost('tgl');
         $data = [
-            'judul' => 'Laporan Bulanan',
-            'databulanan' => $dataBulanan,
+            'judul' => 'Laporan Stok Keluar Produk',
+            'datastokkeluarproduk' => $this->ModelLaporan->DataStokKeluarProduk($tgl),
             'web' => $this->ModelAdmin->DetailData(),
-            'bulan' => $bulan,
-            'tahun' => $tahun,
+            'tgl' => $tgl,
         ];
 
         $response = [
-            'data' => view('laporan/v_tabel_laporan_bulanan', $data)
+            'data' => view('laporan/v_tabel_laporan_stok_keluar_produk', $data)
         ];
 
         echo json_encode($response);
     }
 
-    public function PrintLaporanBulanan($bulan, $tahun)
+    public function PrintLaporanStokKeluarProduk($tgl)
     {
-        // Ambil data grand_total dan qty
-        $grandTotalData = $this->ModelLaporan->getGrandTotalBulanan($bulan, $tahun);
-        $qtyData = $this->ModelLaporan->getQtyBulanan($bulan, $tahun);
-
-        // Gabungkan data berdasarkan tgl_transaksi
-        $dataBulanan = [];
-        foreach ($grandTotalData as $gt) {
-            $tgl = $gt['tgl_transaksi'];
-            $dataBulanan[$tgl]['tgl_transaksi'] = $tgl;
-            $dataBulanan[$tgl]['total_grand'] = $gt['total_grand'];
-            $dataBulanan[$tgl]['total_qty'] = 0; // Inisialisasi total_qty
-
-            // Cari total_qty dari qtyData
-            foreach ($qtyData as $qty) {
-                if ($qty['tgl_transaksi'] == $tgl) {
-                    $dataBulanan[$tgl]['total_qty'] = $qty['total_qty'];
-                }
-            }
-        }
-
         $data = [
-            'judul' => 'Laporan Bulanan',
+            'judul' => 'Laporan Stok Keluar Produk',
             'web' => $this->ModelAdmin->DetailData(),
-            'page' => 'laporan/v_print_lap_bulanan',
-            'databulanan' => $dataBulanan, // Mengirimkan data gabungan
-            'bulan' => $bulan,
-            'tahun' => $tahun,
+            'page' => 'laporan/v_print_lap_stok_keluar_produk',
+            'datastokkeluarproduk' => $this->ModelLaporan->DataStokKeluarProduk($tgl),
+            'tgl' => $tgl,
         ];
-
         return view('laporan/v_template_print_laporan', $data);
     }
 
-    public function LaporanTahunan()
+    public function LaporanStokMasukBahanBaku()
     {
         $data = [
             'judul' => 'Laporan',
-            'subjudul' => 'Laporan Tahunan',
+            'subjudul' => 'Laporan Stok Masuk Bahan Baku',
             'menu' => 'laporan',
-            'submenu' => 'laporan-tahunan',
-            'page' => 'laporan/v_laporan_tahunan',
+            'submenu' => 'laporan-stok-masuk-bahan-baku',
+            'page' => 'laporan/v_laporan_stok_masuk_bahan_baku',
             'web' => $this->ModelAdmin->DetailData(),
         ];
         return view('v_template', $data);
     }
 
-    public function ViewLaporanTahunan()
+    public function ViewLaporanStokMasukBahanBaku()
     {
-        $tahun = $this->request->getPost('tahun');
+        $tgl = $this->request->getPost('tgl');
         $data = [
-            'judul' => 'Laporan Tahunan',
-            'datatahunan' => $this->ModelLaporan->DataTahunan($tahun),
+            'judul' => 'Laporan Stok Masuk Bahan Baku',
+            'datastokmasukbahanbaku' => $this->ModelLaporan->DataStokMasukBahanBaku($tgl),
             'web' => $this->ModelAdmin->DetailData(),
-            'tahun' => $tahun,
+            'tgl' => $tgl,
         ];
 
         $response = [
-            'data' => view('laporan/v_tabel_laporan_tahunan', $data)
+            'data' => view('laporan/v_tabel_laporan_stok_masuk_bahan_baku', $data)
         ];
 
         echo json_encode($response);
     }
 
-    public function PrintLaporanTahunan($tahun)
+    public function PrintLaporanStokMasukBahanBaku($tgl)
     {
         $data = [
-            'judul' => 'Laporan Tahunan',
+            'judul' => 'Laporan Stok Masuk Bahan Baku',
             'web' => $this->ModelAdmin->DetailData(),
-            'page' => 'laporan/v_print_lap_tahunan',
-            'datatahunan' => $this->ModelLaporan->DataTahunan($tahun),
-            'tahun' => $tahun,
+            'page' => 'laporan/v_print_lap_stok_masuk_bahan_baku',
+            'datastokmasukbahanbaku' => $this->ModelLaporan->DataStokMasukBahanBaku($tgl),
+            'tgl' => $tgl,
         ];
         return view('laporan/v_template_print_laporan', $data);
     }
 
-    // Menampilkan halaman laporan tanggal
-    public function LaporanTanggal()
+    // Menampilkan halaman laporan
+    public function LaporanStokKeluarBahanBaku()
     {
         $data = [
             'judul' => 'Laporan',
-            'subjudul' => 'Laporan Tanggal',
+            'subjudul' => 'Laporan Stok Keluar Bahan Baku',
             'menu' => 'laporan',
-            'submenu' => 'laporan-tanggal',
-            'page' => 'laporan/v_laporan_tanggal',
+            'submenu' => 'laporan-stok-keluar-bahan-baku',
+            'page' => 'laporan/v_laporan_stok_keluar_bahan_baku',
             'web' => $this->ModelAdmin->DetailData(),
         ];
         return view('v_template', $data);
+    }
+
+    public function ViewLaporanStokKeluarBahanBaku()
+    {
+        $tgl = $this->request->getPost('tgl');
+        $data = [
+            'judul' => 'Laporan Stok Keluar Bahan Baku',
+            'datastokkeluarbahanbaku' => $this->ModelLaporan->DataStokKeluarBahanBaku($tgl),
+            'web' => $this->ModelAdmin->DetailData(),
+            'tgl' => $tgl,
+        ];
+
+        $response = [
+            'data' => view('laporan/v_tabel_laporan_stok_keluar_bahan_baku', $data)
+        ];
+
+        echo json_encode($response);
+    }
+
+    public function PrintLaporanStokKeluarBahanBaku($tgl)
+    {
+        $data = [
+            'judul' => 'Laporan Stok Keluar Bahan Baku',
+            'web' => $this->ModelAdmin->DetailData(),
+            'page' => 'laporan/v_print_lap_stok_keluar_bahan_baku',
+            'datastokkeluarbahanbaku' => $this->ModelLaporan->DataStokKeluarBahanBaku($tgl),
+            'tgl' => $tgl,
+        ];
+        return view('laporan/v_template_print_laporan', $data);
     }
 
     public function exportExcelTanggal()

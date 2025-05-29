@@ -7,19 +7,52 @@ use CodeIgniter\Model;
 class ModelLaporan extends Model
 {
     // Mengambil data transaksi harian berdasarkan tanggal
-    public function DataHarian($tgl)
+    public function DataStokMasukProduk($tgl)
     {
-        return $this->db->table('tbl_rinci_transaksi')
-            ->join('tbl_transaksi', 'tbl_transaksi.no_order = tbl_rinci_transaksi.no_order')
-            ->join('tbl_produk', 'tbl_produk.id_produk = tbl_rinci_transaksi.id_produk')
-            ->where('tbl_transaksi.tgl_transaksi', $tgl)
-            ->select('tbl_rinci_transaksi.id_produk')
-            ->select('tbl_produk.nama_produk')
-            ->select('tbl_produk.harga_jual')
-            ->selectSum('tbl_rinci_transaksi.qty') // Agregat total qty
-            ->selectSum('tbl_transaksi.grand_total') // Jika ingin total grand_total, gunakan agregat juga
-            ->groupBy('tbl_rinci_transaksi.id_produk') // Grup berdasarkan id_produk
-            ->get()->getResultArray();
+        return $this->db->table('tbl_barangmasuk')
+            ->select('tbl_barangmasuk.*, tbl_produk.nama_produk, tbl_produk.id_kategori, tbl_produk.kode_produk, tbl_satuan.nama_satuan')
+            ->join('tbl_produk', 'tbl_produk.kode_produk = tbl_barangmasuk.kode_produk')
+            ->join('tbl_satuan', 'tbl_satuan.id_satuan = tbl_barangmasuk.id_satuan')
+            ->where('tbl_produk.id_kategori', 1)
+            ->where('DATE(tbl_barangmasuk.tanggal)', $tgl)
+            ->get()
+            ->getResultArray();
+    }
+
+    public function DataStokKeluarProduk($tgl)
+    {
+        return $this->db->table('tbl_barangkeluar')
+            ->select('tbl_barangkeluar.*, tbl_produk.nama_produk, tbl_produk.id_kategori, tbl_produk.kode_produk, tbl_satuan.nama_satuan')
+            ->join('tbl_produk', 'tbl_produk.kode_produk = tbl_barangkeluar.kode_produk')
+            ->join('tbl_satuan', 'tbl_satuan.id_satuan = tbl_barangkeluar.id_satuan')
+            ->where('tbl_produk.id_kategori', 1)
+            ->where('DATE(tbl_barangkeluar.tanggal)', $tgl)
+            ->get()
+            ->getResultArray();
+    }
+
+    public function DataStokMasukBahanBaku($tgl)
+    {
+        return $this->db->table('tbl_barangmasuk')
+            ->select('tbl_barangmasuk.*, tbl_produk.nama_produk, tbl_produk.id_kategori, tbl_produk.kode_produk, tbl_satuan.nama_satuan')
+            ->join('tbl_produk', 'tbl_produk.kode_produk = tbl_barangmasuk.kode_produk')
+            ->join('tbl_satuan', 'tbl_satuan.id_satuan = tbl_barangmasuk.id_satuan')
+            ->where('tbl_produk.id_kategori', 2)
+            ->where('DATE(tbl_barangmasuk.tanggal)', $tgl)
+            ->get()
+            ->getResultArray();
+    }
+
+    public function DataStokKeluarBahanBaku($tgl)
+    {
+        return $this->db->table('tbl_barangkeluar')
+            ->select('tbl_barangkeluar.*, tbl_produk.nama_produk, tbl_produk.id_kategori, tbl_produk.kode_produk, tbl_satuan.nama_satuan')
+            ->join('tbl_produk', 'tbl_produk.kode_produk = tbl_barangkeluar.kode_produk')
+            ->join('tbl_satuan', 'tbl_satuan.id_satuan = tbl_barangkeluar.id_satuan')
+            ->where('tbl_produk.id_kategori', 2)
+            ->where('DATE(tbl_barangkeluar.tanggal)', $tgl)
+            ->get()
+            ->getResultArray();
     }
 
     public function getGrandTotalBulanan($bulan, $tahun)
