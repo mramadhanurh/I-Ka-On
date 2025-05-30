@@ -145,4 +145,41 @@ class Home extends BaseController
 
         return redirect()->to(base_url('Home/SettingUser'))->with('success', 'Akun berhasil diperbarui.');
     }
+
+    public function Register()
+    {
+        $data = [
+            'judul' => 'Register',
+        ];
+        return view('v_register', $data);
+    }
+
+    public function ProsesRegister()
+    {
+        $validation = \Config\Services::validation();
+
+        // Validasi input
+        $valid = $this->validate([
+            'nama_user' => 'required',
+            'email' => 'required|valid_email|is_unique[tbl_user.email]',
+            'password' => 'required|min_length[8]',
+        ]);
+
+        if (!$valid) {
+            return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+        }
+
+        $data = [
+            'nama_user' => $this->request->getPost('nama_user'),
+            'email' => $this->request->getPost('email'),
+            'password' => sha1($this->request->getPost('password')),
+            'level' => 2, // default level 2 untuk user baru
+        ];
+
+        $userModel = new \App\Models\ModelUser();
+        $userModel->insert($data);
+
+        session()->setFlashdata('pesan', 'Pendaftaran berhasil, silakan login!');
+        return redirect()->to(base_url('Home')); // arahkan ke halaman login (ganti jika berbeda)
+    }
 }
