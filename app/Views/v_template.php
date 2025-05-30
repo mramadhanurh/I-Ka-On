@@ -65,6 +65,8 @@
     <script src="<?= base_url('AdminLTE') ?>/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="<?= base_url('AdminLTE') ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="<?= base_url('AdminLTE') ?>/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!-- ChartJS -->
+    <script src="<?= base_url('AdminLTE') ?>/plugins/chart.js/Chart.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url('AdminLTE') ?>/dist/js/adminlte.min.js"></script>
 

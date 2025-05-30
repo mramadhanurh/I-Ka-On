@@ -20,6 +20,7 @@ class Admin extends BaseController
             'menu' => 'dashboard',
             'submenu' => '',
             'page' => 'v_admin',
+            'grafik' => $this->ModelAdmin->Grafik(),
             'jml_produk' => $this->ModelAdmin->JumlahProduk(),
             'jml_kategori' => $this->ModelAdmin->JumlahKategori(),
             'jml_satuan' => $this->ModelAdmin->JumlahSatuan(),
