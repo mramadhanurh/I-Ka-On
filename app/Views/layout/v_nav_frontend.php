@@ -89,7 +89,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('Home') ?>">
+                <a class="nav-link" href="<?= (session('level') == 1) ? base_url('Admin') : base_url('Pengguna') ?>">
                     <i class="fas fa-user"></i>
                 </a>
             </li>

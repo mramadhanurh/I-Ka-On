@@ -4,8 +4,8 @@
         <span class="info-box-icon"><i class="fas fa-money-bill-wave"></i></span>
 
         <div class="info-box-content">
-            <span class="info-box-text">Info Box Text</span>
-            <span class="info-box-number">Info Box Number</span>
+            <span class="info-box-text">Transaksi Hari Ini</span>
+            <span class="info-box-number">Rp <?= number_format($transaksi_hari_ini, 0, ',', '.') ?></span>
         </div>
         <!-- /.info-box-content -->
     </div>
@@ -17,8 +17,8 @@
         <span class="info-box-icon"><i class="fas fa-money-bill-wave"></i></span>
 
         <div class="info-box-content">
-            <span class="info-box-text">Info Box Text</span>
-            <span class="info-box-number">Info Box Number</span>
+            <span class="info-box-text">Transaksi Bulan Ini</span>
+            <span class="info-box-number">Rp <?= number_format($transaksi_bulan_ini, 0, ',', '.') ?></span>
         </div>
         <!-- /.info-box-content -->
     </div>
@@ -30,8 +30,8 @@
         <span class="info-box-icon"><i class="fas fa-money-bill-wave"></i></span>
 
         <div class="info-box-content">
-            <span class="info-box-text">Info Box Text</span>
-            <span class="info-box-number">Info Box Number</span>
+            <span class="info-box-text">Transaksi Tahun Ini</span>
+            <span class="info-box-number">Rp <?= number_format($transaksi_tahun_ini, 0, ',', '.') ?></span>
         </div>
         <!-- /.info-box-content -->
     </div>
